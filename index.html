@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Laboratory Resources</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #9333ea, #ec4899);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-white p-6">
+
+  <div class="max-w-6xl mx-auto space-y-10">
+
+    <!-- Header -->
+    <header class="text-center space-y-2">
+      <h1 class="text-4xl font-extrabold">⚛️ Physics Laboratory Resources</h1>
+      <p class="text-lg opacity-90">Manuals • Viva Questions • Experiment Videos</p>
+    </header>
+
+    <!-- Manual -->
+    <div class="card bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow text-center">
+      <h2 class="text-2xl font-semibold mb-3">📘 Physics Laboratory Manual</h2>
+      <a href="https://drive.google.com/file/d/1F1Q5pg1hvynim1mL_-_0uG787Tec0ytP/view?usp=share_link"
+         target="_blank"
+         class="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-center font-bold hover:from-cyan-500 hover:to-blue-500 transition">
+        👉 Download Manual
+      </a>
+    </div>
+
+    <!-- Viva -->
+    <div class="card bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow text-center">
+      <h2 class="text-2xl font-semibold mb-3">📑 Viva Voice Questions</h2>
+      <a href="https://drive.google.com/file/d/1kIgv0L1YHEdAKxZkPDp3BL_CFcQ5WM5L/view?usp=share_link"
+         target="_blank"
+         class="inline-block px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-center font-bold hover:from-pink-500 hover:to-purple-500 transition">
+        👉 Download Viva Questions
+      </a>
+    </div>
+
+    <!-- Videos with images -->
+    <div class="card bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow">
+      <h2 class="text-3xl font-bold text-center mb-6">🎥 Physics Laboratory Experiments</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Exp 1B -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?pendulum,physics" alt="Torsional Pendulum" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 1B – Torsional Pendulum</h3>
+          <a href="https://youtu.be/FRK88vmYzjU" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 1C -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?mechanics,object" alt="Moment of Inertia" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 1C – Moment of Inertia</h3>
+          <a href="https://youtu.be/41A2XmkGk9Q" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 2 -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?oscillation,physics" alt="Cantilever Oscillations" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 2 – SHM (Cantilever)</h3>
+          <a href="https://youtu.be/PDQyFeiHoRM" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 3 -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?beam,engineering" alt="Non-Uniform Bending" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 3 – Non-Uniform Bending</h3>
+          <a href="https://youtu.be/UPv09L8trz0" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 4 -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?beam,physics" alt="Uniform Bending" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 4 – Uniform Bending</h3>
+          <a href="https://youtu.be/g9R2yr9xuUE" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 5 -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?laser,light" alt="Laser Grating" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 5 – Laser (Grating)</h3>
+          <a href="https://youtu.be/dOTgadi7Hd0" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 6 -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?optics,physics" alt="Air Wedge" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 6 – Air Wedge</h3>
+          <a href="https://youtu.be/t5579n7pg2Y" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 7B -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?cd,disk" alt="Compact Disc" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 7B – Compact Disc</h3>
+          <a href="https://youtu.be/pDnMT6Un2gI" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+        <!-- Exp 8 -->
+        <div class="bg-white/10 p-4 rounded-xl">
+          <img src="https://source.unsplash.com/600x400/?fiber,optics" alt="Optical Fiber" class="rounded-lg mb-3">
+          <h3 class="text-xl font-semibold">Experiment 8 – Optical Fiber</h3>
+          <a href="https://youtu.be/ih6ErM2KiGE" target="_blank"
+             class="inline-block mt-2 px-4 py-2 rounded bg-green-600 hover:bg-green-700 font-medium">▶ Watch Video</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
