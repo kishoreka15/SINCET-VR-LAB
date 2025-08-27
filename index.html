@@ -11,25 +11,17 @@
     :root { --blue-1: #1e3a8a; --cyan-1: #0ea5e9; --cyan-2: #22d3ee; }
     html, body { font-family: 'Inter', sans-serif; height: 100%; }
     body { overflow-x: hidden; }
-
-    /* Gradient helpers */
     .tech-gradient { background: linear-gradient(135deg, var(--blue-1) 0%, var(--cyan-1) 50%, var(--cyan-2) 100%); }
     .glow-border { border: 1px solid transparent; background: linear-gradient(white, white) padding-box, linear-gradient(45deg, #3b82f6, #06b6d4) border-box; }
     .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / .1), 0 10px 10px -5px rgb(0 0 0 / .04); }
-
-    /* Images never overflow */
     img { max-width: 100%; height: auto; }
-
-    /* Typewriter only on >=640px; on phones, use normal wrapping to avoid overflow */
     .typewriter { overflow: hidden; border-right: .15em solid #3b82f6; white-space: nowrap; animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; }
     @keyframes typing { from { width: 0 } to { width: 100% } }
     @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #3b82f6; } }
     @media (max-width: 640px) {
       .typewriter { white-space: normal; border-right: 0; animation: none; }
     }
-
-    /* Tabs */
     .tab-content { display: none; }
     .tab-content.active { display: block; animation: fadeIn .5s ease-in; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
@@ -95,7 +87,6 @@
           </div>
         </div>
         <div class="relative">
-          <!-- On phones: no rotation, no outer padding; on md+: add subtle rotation/padding -->
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl md:p-6 p-0 md:rotate-2 overflow-hidden">
             <img class="w-full h-auto object-contain" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/db73e7d9-ff83-4945-82d9-2ed0d1f00cbb.png" alt="AR interface showing engineering models and data visualizations in a lab" />
           </div>
@@ -112,7 +103,6 @@
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">Laboratory Overview</h2>
         <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">State-of-the-art augmented reality and artificial intelligence laboratory for engineering education and research</p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <div class="card-hover bg-gray-50 p-6 md:p-8 rounded-xl glow-border">
           <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 md:mb-6">
@@ -168,413 +158,388 @@
   </section>
 
   <!-- Departments -->
-  <section id="departments" class="py-14 md:py-20 bg-white">
+  <section id="departments" class="py-16 bg-white dark:bg-gray-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10 md:mb-16">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">Department Laboratories</h2>
-        <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive AR-enabled laboratories for all engineering departments and years</p>
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Department Laboratories</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Comprehensive AR-enabled laboratories for all engineering departments and years.</p>
       </div>
 
       <!-- Tabs -->
-      <div class="mb-8 md:mb-12">
-        <div class="flex flex-wrap gap-3 sm:gap-4 justify-center">
-          <button class="department-tab bg-blue-100 text-blue-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-blue-200 transition active" data-department="mechanical">Mechanical Engineering</button>
-          <button class="department-tab bg-green-100 text-green-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-green-200 transition" data-department="cse">CSE</button>
-          <button class="department-tab bg-purple-100 text-purple-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-purple-200 transition" data-department="ece">ECE</button>
-          <button class="department-tab bg-red-100 text-red-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-red-200 transition" data-department="aids">AI & DS</button>
-          <button class="department-tab bg-yellow-100 text-yellow-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-yellow-200 transition" data-department="it">IT</button>
-          <button class="department-tab bg-teal-100 text-teal-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-teal-200 transition" data-department="agriculture">Agriculture</button>
+      <div class="mb-10">
+        <div class="flex flex-wrap justify-center gap-3">
+          <button class="department-tab px-4 py-2 rounded-xl font-semibold bg-blue-100 text-blue-900 ring-1 ring-inset ring-blue-300 data-[active=true]:scale-105 transition" data-department="mechanical" data-active="true">Mechanical Engineering</button>
+          <button class="department-tab px-4 py-2 rounded-xl font-semibold bg-green-100 text-green-900 ring-1 ring-inset ring-green-300" data-department="cse">CSE</button>
+          <button class="department-tab px-4 py-2 rounded-xl font-semibold bg-purple-100 text-purple-900 ring-1 ring-inset ring-purple-300" data-department="ece">ECE</button>
+          <button class="department-tab px-4 py-2 rounded-xl font-semibold bg-red-100 text-red-900 ring-1 ring-inset ring-red-300" data-department="aids">AI & DS</button>
+          <button class="department-tab px-4 py-2 rounded-xl font-semibold bg-yellow-100 text-yellow-900 ring-1 ring-inset ring-yellow-300" data-department="it">IT</button>
+          <button class="department-tab px-4 py-2 rounded-xl font-semibold bg-teal-100 text-teal-900 ring-1 ring-inset ring-teal-300" data-department="agriculture">Agriculture</button>
         </div>
       </div>
+      <!-- Tab Panels -->
+      <div class="space-y-12">
+        <!-- ================= MECHANICAL ================= -->
+        <section id="mechanical" class="tab-content">
+          <h3 class="text-2xl font-bold mb-6 text-center">Mechanical Engineering Laboratories</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Year 1 -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">1st</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">First Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="/graphics.html" class="text-blue-600 hover:underline">Engineering Graphics Lab</a></li>
+                <li><a href="labs/mech/1st_year/physics lab manual.pdf" class="text-blue-600 hover:underline">Workshop Practice</a></li>
+                <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
+                <li><a href="/chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
+                <li><a href="labs/mech/1st_year/1 st semester/python.pdf" class="text-blue-600 hover:underline">Basic Programming Lab</a></li>
+              </ul>
+            </div>
+            <!-- Year 2 -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-green-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">2nd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Second Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="labs/mech/2nd_year/lab_strength_of_materials.html" class="text-blue-600 hover:underline">Strength of Materials Lab</a></li>
+                <li><a href="labs/mech/2nd_year/lab_thermodynamics.html" class="text-blue-600 hover:underline">Thermodynamics Lab</a></li>
+                <li><a href="labs/mech/2nd_year/lab_fluid_mechanics.html" class="text-blue-600 hover:underline">Fluid Mechanics Lab</a></li>
+                <li><a href="labs/mech/2nd_year/lab_machine_drawing.html" class="text-blue-600 hover:underline">Machine Drawing Lab</a></li>
+                <li><a href="labs/mech/2nd_year/lab_material_science.html" class="text-blue-600 hover:underline">Material Science Lab</a></li>
+              </ul>
+            </div>
+            <!-- Year 3 -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-yellow-500 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">3rd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Third Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="labs/mech/3rd_year/lab_heat_transfer.html" class="text-blue-600 hover:underline">Heat Transfer Lab</a></li>
+                <li><a href="labs/mech/3rd_year/lab_machine_design.html" class="text-blue-600 hover:underline">Machine Design Lab</a></li>
+                <li><a href="labs/mech/3rd_year/lab_manufacturing_technology.html" class="text-blue-600 hover:underline">Manufacturing Technology Lab</a></li>
+                <li><a href="labs/mech/3rd_year/lab_dynamics_of_machinery.html" class="text-blue-600 hover:underline">Dynamics of Machinery Lab</a></li>
+                <li><a href="labs/mech/3rd_year/lab_metrology.html" class="text-blue-600 hover:underline">Metrology Lab</a></li>
+              </ul>
+            </div>
+            <!-- Final Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-red-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">Final</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Final Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="labs/mech/final_year/lab_cad_cam.html" class="text-blue-600 hover:underline">CAD/CAM Lab</a></li>
+                <li><a href="labs/mech/final_year/lab_automobile_engineering.html" class="text-blue-600 hover:underline">Automobile Engineering Lab</a></li>
+                <li><a href="labs/mech/final_year/lab_refrigeration_ac.html" class="text-blue-600 hover:underline">Refrigeration &amp; AC Lab</a></li>
+                <li><a href="labs/mech/final_year/lab_project.html" class="text-blue-600 hover:underline">Project Lab</a></li>
+                <li><a href="labs/mech/final_year/lab_industrial_training.html" class="text-blue-600 hover:underline">Industrial Training Lab</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- ================= CSE ================= -->
+        <section id="cse" class="tab-content hidden">
+          <h3 class="text-2xl font-bold mb-6 text-center">Computer Science Engineering Laboratories</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1st Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">1st</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">First Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="/graphics.html" class="text-blue-600 hover:underline">Engineering Graphics Lab</a></li>
+                <li><a href="labs/mech/1st_year/physics lab manual.pdf" class="text-blue-600 hover:underline">Workshop Practice</a></li>
+                <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
+                <li><a href="/chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
+                <li><a href="labs/mech/1st_year/1 st semester/python.pdf" class="text-blue-600 hover:underline">Basic Programming Lab</a></li>
+                <li>Programming Fundamentals Lab</li>
+                <li>Digital Logic Design Lab</li>
+                <li>Basic Electronics Lab</li>
+                <li>Mathematics Lab</li>
+                <li>Communication Skills Lab</li>
+              </ul>
+            </div>
+            <!-- 2nd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-green-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">2nd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Second Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Data Structures Lab</li>
+                <li>Object Oriented Programming Lab</li>
+                <li>Database Management Lab</li>
+                <li>Computer Organization Lab</li>
+                <li>Web Technologies Lab</li>
+              </ul>
+            </div>
+            <!-- 3rd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-yellow-500 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">3rd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Third Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Algorithms Lab</li>
+                <li>Operating Systems Lab</li>
+                <li>Computer Networks Lab</li>
+                <li>Software Engineering Lab</li>
+                <li>Machine Learning Lab</li>
+              </ul>
+            </div>
+            <!-- Final Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-red-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">Final</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Final Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Artificial Intelligence Lab</li>
+                <li>Cloud Computing Lab</li>
+                <li>Cybersecurity Lab</li>
+                <li>Big Data Analytics Lab</li>
+                <li>Project Development Lab</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- ================= ECE ================= -->
+        <section id="ece" class="tab-content hidden">
+          <h3 class="text-2xl font-bold mb-6 text-center">Electronics &amp; Communication Engineering Laboratories</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1st Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">1st</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">First Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="/graphics.html" class="text-blue-600 hover:underline">Engineering Graphics Lab</a></li>
+                <li><a href="labs/mech/1st_year/physics lab manual.pdf" class="text-blue-600 hover:underline">Workshop Practice</a></li>
+                <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
+                <li><a href="/chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
+                <li><a href="labs/mech/1st_year/1 st semester/python.pdf" class="text-blue-600 hover:underline">Basic Programming Lab</a></li>
+                <li>Basic Electronics Lab</li>
+                <li>Circuit Theory Lab</li>
+                <li>Engineering Physics Lab</li>
+                <li>Programming Fundamentals Lab</li>
+                <li>Workshop Practice</li>
+              </ul>
+            </div>
+            <!-- 2nd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-green-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">2nd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Second Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Digital Electronics Lab</li>
+                <li>Signals &amp; Systems Lab</li>
+                <li>Electronic Devices Lab</li>
+                <li>Microprocessor Lab</li>
+                <li>Communication Systems Lab</li>
+              </ul>
+            </div>
+            <!-- 3rd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-yellow-500 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">3rd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Third Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>VLSI Design Lab</li>
+                <li>Digital Signal Processing Lab</li>
+                <li>Microwave Engineering Lab</li>
+                <li>Embedded Systems Lab</li>
+                <li>Optical Communication Lab</li>
+              </ul>
+            </div>
+            <!-- Final Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-red-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">Final</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Final Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Wireless Communication Lab</li>
+                <li>IoT Lab</li>
+                <li>Robotics Lab</li>
+                <li>Project Lab</li>
+                <li>Industrial Training Lab</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-      <!-- Mechanical -->
-      <div class="tab-content active" id="mechanical">
-        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 md:mb-8 text-center">Mechanical Engineering Laboratories</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          <!-- 1st Year -->
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">1st</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">First Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li><a href="graphics.html" class="text-blue-600 hover:underline">Engineering Graphics </a></li>
-              
-              <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
-              <li><a href="chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
-              <li><a href="labs/mech/1st_year/1 st semester/python.pdf" class="text-blue-600 hover:underline">Basic Programming Lab</a></li>
-            </ul>
+        <!-- ================= AI & DS ================= -->
+        <section id="aids" class="tab-content hidden">
+          <h3 class="text-2xl font-bold mb-6 text-center">Artificial Intelligence &amp; Data Science Laboratories</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1st Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">1st</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">First Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="/graphics.html" class="text-blue-600 hover:underline">Engineering Graphics Lab</a></li>
+                <li><a href="labs/mech/1st_year/physics lab manual.pdf" class="text-blue-600 hover:underline">Workshop Practice</a></li>
+                <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
+                <li><a href="/chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
+                <li><a href="labs/mech/1st_year/1 st semester/python.pdf" class="text-blue-600 hover:underline">Basic Programming Lab</a></li>
+                <li>Programming Fundamentals Lab</li>
+                <li>Mathematics for AI Lab</li>
+                <li>Data Structures Lab</li>
+                <li>Digital Logic Design Lab</li>
+                <li>Communication Skills Lab</li>
+              </ul>
+            </div>
+            <!-- 2nd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-green-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">2nd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Second Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Object Oriented Programming Lab</li>
+                <li>Database Management Systems Lab</li>
+                <li>Operating Systems Lab</li>
+                <li>Design &amp; Analysis of Algorithms Lab</li>
+                <li>Probability and Statistics Lab</li>
+              </ul>
+            </div>
+            <!-- 3rd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-yellow-500 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">3rd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Third Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Machine Learning Lab</li>
+                <li>Deep Learning Lab</li>
+                <li>Natural Language Processing Lab</li>
+                <li>Computer Vision Lab</li>
+                <li>Big Data Analytics Lab</li>
+              </ul>
+            </div>
+            <!-- Final Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-red-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">Final</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Final Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Reinforcement Learning Lab</li>
+                <li>AI Ethics and Governance Lab</li>
+                <li>Data Visualization Lab</li>
+                <li>Cloud for AI Lab</li>
+                <li>Project Development Lab</li>
+              </ul>
+            </div>
           </div>
-          <!-- 2nd Year -->
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">2nd</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">Second Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li><a href="labs/mech/2nd_year/lab_strength_of_materials.html" class="text-blue-600 hover:underline">Strength of Materials Lab</a></li>
-              <li><a href="labs/mech/2nd_year/lab_thermodynamics.html" class="text-blue-600 hover:underline">Thermodynamics Lab</a></li>
-              <li><a href="labs/mech/2nd_year/lab_fluid_mechanics.html" class="text-blue-600 hover:underline">Fluid Mechanics Lab</a></li>
-              <li><a href="labs/mech/2nd_year/lab_machine_drawing.html" class="text-blue-600 hover:underline">Machine Drawing Lab</a></li>
-              <li><a href="labs/mech/2nd_year/lab_material_science.html" class="text-blue-600 hover:underline">Material Science Lab</a></li>
-            </ul>
+        </section>
+
+        <!-- ================= IT ================= -->
+        <section id="it" class="tab-content hidden">
+          <h3 class="text-2xl font-bold mb-6 text-center">Information Technology Laboratories</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1st Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">1st</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">First Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="/graphics.html" class="text-blue-600 hover:underline">Engineering Graphics Lab</a></li>
+                <li><a href="labs/mech/1st_year/physics lab manual.pdf" class="text-blue-600 hover:underline">Workshop Practice</a></li>
+                <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
+                <li><a href="/chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
+                <li><a href="labs/mech/1st_year/1 st semester/python.pdf" class="text-blue-600 hover:underline">Basic Programming Lab</a></li>
+                <li>Programming in C Lab</li>
+                <li>Digital Principles Lab</li>
+                <li>Basic Electrical &amp; Electronics Lab</li>
+                <li>Engineering Graphics Lab</li>
+                <li>Communication Skills Lab</li>
+              </ul>
+            </div>
+            <!-- 2nd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-green-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">2nd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Second Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Data Structures Lab</li>
+                <li>Object Oriented Programming Lab</li>
+                <li>Database Management Systems Lab</li>
+                <li>Computer Networks Lab</li>
+                <li>Web Programming Lab</li>
+              </ul>
+            </div>
+            <!-- 3rd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-yellow-500 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">3rd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Third Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Operating Systems Lab</li>
+                <li>Software Engineering Lab</li>
+                <li>Mobile Application Development Lab</li>
+                <li>Cloud Computing Lab</li>
+                <li>Network Security Lab</li>
+              </ul>
+            </div>
+            <!-- Final Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-red-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">Final</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Final Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Data Analytics Lab</li>
+                <li>IoT Lab</li>
+                <li>Web Services Lab</li>
+                <li>Project Development Lab</li>
+                <li>Industrial Training Lab</li>
+              </ul>
+            </div>
           </div>
-          <!-- 3rd Year -->
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">3rd</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">Third Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li><a href="labs/mech/3rd_year/lab_heat_transfer.html" class="text-blue-600 hover:underline">Heat Transfer Lab</a></li>
-              <li><a href="labs/mech/3rd_year/lab_machine_design.html" class="text-blue-600 hover:underline">Machine Design Lab</a></li>
-              <li><a href="labs/mech/3rd_year/lab_manufacturing_technology.html" class="text-blue-600 hover:underline">Manufacturing Technology Lab</a></li>
-              <li><a href="labs/mech/3rd_year/lab_dynamics_of_machinery.html" class="text-blue-600 hover:underline">Dynamics of Machinery Lab</a></li>
-              <li><a href="labs/mech/3rd_year/lab_metrology.html" class="text-blue-600 hover:underline">Metrology Lab</a></li>
-            </ul>
+        </section>
+
+        <!-- ================= AGRICULTURE ================= -->
+        <section id="agriculture" class="tab-content hidden">
+          <h3 class="text-2xl font-bold mb-6 text-center">Agriculture Engineering Laboratories</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1st Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">1st</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">First Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li><a href="/graphics.html" class="text-blue-600 hover:underline">Engineering Graphics Lab</a></li>
+                <li><a href="labs/mech/1st_year/physics lab manual.pdf" class="text-blue-600 hover:underline">Workshop Practice</a></li>
+                <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
+                <li><a href="/chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
+                <li><a href="labs/mech/1st_year/1 st semester/python.pdf" class="text-blue-600 hover:underline">Basic Programming Lab</a></li>
+                <li>Basic Engineering Workshop</li>
+                <li>Soil Science Lab</li>
+                <li>Crop Production Lab</li>
+                <li>Engineering Drawing Lab</li>
+                <li>Basic Physics &amp; Chemistry Lab</li>
+              </ul>
+            </div>
+            <!-- 2nd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-green-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">2nd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Second Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Farm Machinery Lab</li>
+                <li>Irrigation and Drainage Lab</li>
+                <li>Agricultural Processing Lab</li>
+                <li>Surveying and Leveling Lab</li>
+                <li>Thermodynamics and Heat Transfer Lab</li>
+              </ul>
+            </div>
+            <!-- 3rd Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-yellow-500 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">3rd</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Third Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Renewable Energy Lab</li>
+                <li>Post-Harvest Technology Lab</li>
+                <li>Agricultural Structures Lab</li>
+                <li>Soil and Water Conservation Lab</li>
+                <li>Fluid Mechanics Lab</li>
+              </ul>
+            </div>
+            <!-- Final Year -->
+            <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl border border-gray-200 dark:border-gray-800">
+              <div class="w-12 h-12 bg-red-600 text-white rounded-lg grid place-items-center mb-4 mx-auto font-bold">Final</div>
+              <h4 class="text-lg font-semibold text-center mb-4 text-white">Final Year</h4>
+              <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Precision Agriculture Lab</li>
+                <li>Food Engineering Lab</li>
+                <li>Agricultural Waste Management Lab</li>
+                <li>Project Lab</li>
+                <li>Industrial Training Lab</li>
+              </ul>
+            </div>
           </div>
-          <!-- Final Year -->
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">Final</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">Final Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li><a href="labs/mech/final_year/lab_cad_cam.html" class="text-blue-600 hover:underline">CAD/CAM Lab</a></li>
-              <li><a href="labs/mech/final_year/lab_automobile_engineering.html" class="text-blue-600 hover:underline">Automobile Engineering Lab</a></li>
-              <li><a href="labs/mech/final_year/lab_refrigeration_ac.html" class="text-blue-600 hover:underline">Refrigeration & AC Lab</a></li>
-              <li><a href="labs/mech/final_year/lab_project.html" class="text-blue-600 hover:underline">Project Lab</a></li>
-              <li><a href="labs/mech/final_year/lab_industrial_training.html" class="text-blue-600 hover:underline">Industrial Training Lab</a></li>
-            </ul>
-          </div>
-        </div>
+        </section>
       </div>
-
-      <!-- CSE (same structure as before; shortened for brevity) -->
-      <div class="tab-content" id="cse">
-        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 md:mb-8 text-center">Computer Science Engineering Laboratories</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">1st</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">First Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li>
-              <li><a href="chemistry" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
-              <li><a href="graphics.html" class="text-blue-600 hover:underline">Engineering Graphics </a></li>
-              <li>• Programming Fundamentals Lab</li>
-              <li>• Digital Logic Design Lab</li>
-              <li>• Basic Electronics Lab</li>
-              <li>• Mathematics Lab</li>
-              <li>• Communication Skills Lab</li>
-            </ul>
-          </div>
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">2nd</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">Second Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li>• Data Structures Lab</li>
-              <li>• Object Oriented Programming Lab</li>
-              <li>• Database Management Lab</li>
-              <li>• Computer Organization Lab</li>
-              <li>• Web Technologies Lab</li>
-            </ul>
-          </div>
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">3rd</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">Third Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li>• Algorithms Lab</li>
-              <li>• Operating Systems Lab</li>
-              <li>• Computer Networks Lab</li>
-              <li>• Software Engineering Lab</li>
-              <li>• Machine Learning Lab</li>
-            </ul>
-          </div>
-          <div class="bg-gray-50 p-5 md:p-6 rounded-xl border border-gray-200">
-            <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4 mx-auto"><span class="text-white font-bold">Final</span></div>
-            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">Final Year</h4>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li>• Artificial Intelligence Lab</li>
-              <li>• Cloud Computing Lab</li>
-              <li>• Cybersecurity Lab</li>
-              <li>• Big Data Analytics Lab</li>
-              <li>• Project Development Lab</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- ECE Department (Placeholder) -->
-            <div class="tab-content" id="ece">
-                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Electronics & Communication Engineering Laboratories</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- First Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">1st</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">First Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li><a href="chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
-                            <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li> <!-- manuval & physics manuval vidoe edhu straigth ta index fill ku connect agum -->
-                            <li><a href="graphics.html" class="text-blue-600 hover:underline">Engineering Graphics </a></li>
-                            <li>• Basic Electronics Lab</li>
-                            <li>• Circuit Theory Lab</li>
-                            <li>• Engineering Physics Lab</li>
-                            <li>• Programming Fundamentals Lab</li>
-                            <li>• Workshop Practice</li>
-                        </ul>
-                    </div>
-
-                    <!-- Second Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">2nd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Second Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Digital Electronics Lab</li>
-                            <li>• Signals & Systems Lab</li>
-                            <li>• Electronic Devices Lab</li>
-                            <li>• Microprocessor Lab</li>
-                            <li>• Communication Systems Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Third Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">3rd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Third Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• VLSI Design Lab</li>
-                            <li>• Digital Signal Processing Lab</li>
-                            <li>• Microwave Engineering Lab</li>
-                            <li>• Embedded Systems Lab</li>
-                            <li>• Optical Communication Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Final Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">Final</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Final Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Wireless Communication Lab</li>
-                            <li>• IoT Lab</li>
-                            <li>• Robotics Lab</li>
-                            <li>• Project Lab</li>
-                            <li>• Industrial Training Lab</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI & DS Department (Placeholder) -->
-            <div class="tab-content" id="aids">
-                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Artificial Intelligence & Data Science Laboratories</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- First Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">1st</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">First Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li> <!-- manuval & physics manuval vidoe edhu straigth ta index fill ku connect agum --> 
-                            <li><a href="chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
-                            <li><a href="graphics.html" class="text-blue-600 hover:underline">Engineering Graphics </a></li>                           
-                            <li>• Programming Fundamentals Lab</li>
-                            <li>• Mathematics for AI Lab</li>
-                            <li>• Data Structures Lab</li>
-                            <li>• Digital Logic Design Lab</li>
-                            <li>• Communication Skills Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Second Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">2nd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Second Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Object Oriented Programming Lab</li>
-                            <li>• Database Management Systems Lab</li>
-                            <li>• Operating Systems Lab</li>
-                            <li>• Design and Analysis of Algorithms Lab</li>
-                            <li>• Probability and Statistics Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Third Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">3rd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Third Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Machine Learning Lab</li>
-                            <li>• Deep Learning Lab</li>
-                            <li>• Natural Language Processing Lab</li>
-                            <li>• Computer Vision Lab</li>
-                            <li>• Big Data Analytics Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Final Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">Final</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Final Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Reinforcement Learning Lab</li>
-                            <li>• AI Ethics and Governance Lab</li>
-                            <li>• Data Visualization Lab</li>
-                            <li>• Cloud for AI Lab</li>
-                            <li>• Project Development Lab</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- IT Department (Placeholder) -->
-            <div class="tab-content" id="it">
-                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Information Technology Laboratories</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- First Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">1st</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">First Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li> <!-- manuval & physics manuval vidoe edhu straigth ta index fill ku connect agum -->     
-                            <li><a href="chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
-                            <li><a href="graphics.html" class="text-blue-600 hover:underline">Engineering Graphics </a></li>
-                            <li>• Programming in C Lab</li>
-                            <li>• Digital Principles Lab</li>
-                            <li>• Basic Electrical & Electronics Lab</li>
-                            <li>• Engineering Graphics Lab</li>
-                            <li>• Communication Skills Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Second Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">2nd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Second Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Data Structures Lab</li>
-                            <li>• Object Oriented Programming Lab</li>
-                            <li>• Database Management Systems Lab</li>
-                            <li>• Computer Networks Lab</li>
-                            <li>• Web Programming Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Third Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">3rd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Third Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Operating Systems Lab</li>
-                            <li>• Software Engineering Lab</li>
-                            <li>• Mobile Application Development Lab</li>
-                            <li>• Cloud Computing Lab</li>
-                            <li>• Network Security Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Final Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">Final</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Final Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Data Analytics Lab</li>
-                            <li>• IoT Lab</li>
-                            <li>• Web Services Lab</li>
-                            <li>• Project Development Lab</li>
-                            <li>• Industrial Training Lab</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Agriculture Department (Placeholder) -->
-            <div class="tab-content" id="agriculture">
-                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Agriculture Engineering Laboratories</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- First Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">1st</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">First Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li><a href="physics.html" class="text-blue-600 hover:underline">Physics Laboratory</a></li> <!-- manuval & physics manuval vidoe edhu straigth ta index fill ku connect agum -->     
-                            <li><a href="chemistry.html" class="text-blue-600 hover:underline">Chemistry Laboratory</a></li>
-                            <li><a href="graphics.html" class="text-blue-600 hover:underline">Engineering Graphics </a></li>
-                            <li>• Basic Engineering Workshop</li>
-                            <li>• Soil Science Lab</li>
-                            <li>• Crop Production Lab</li>
-                            <li>• Engineering Drawing Lab</li>
-                            <li>• Basic Physics & Chemistry Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Second Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">2nd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Second Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Farm Machinery Lab</li>
-                            <li>• Irrigation and Drainage Lab</li>
-                            <li>• Agricultural Processing Lab</li>
-                            <li>• Surveying and Leveling Lab</li>
-                            <li>• Thermodynamics and Heat Transfer Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Third Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">3rd</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Third Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Renewable Energy Lab</li>
-                            <li>• Post-Harvest Technology Lab</li>
-                            <li>• Agricultural Structures Lab</li>
-                            <li>• Soil and Water Conservation Lab</li>
-                            <li>• Fluid Mechanics Lab</li>
-                        </ul>
-                    </div>
-
-                    <!-- Final Year -->
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                            <span class="text-white font-bold">Final</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Final Year</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li>• Precision Agriculture Lab</li>
-                            <li>• Food Engineering Lab</li>
-                            <li>• Agricultural Waste Management Lab</li>
-                            <li>• Project Lab</li>
-                            <li>• Industrial Training Lab</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-  <!-- Footer -->
+    </div>
+  </section>
+  <!-- Install Button -->
+  <div class="flex justify-center my-8">
+    <button id="install-btn" style="display:none" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
+      <i class="fas fa-download mr-2"></i>Install App
+    </button>
+  </div>
+  <!-- Footer                         -->
   <footer class="bg-gray-800 text-white py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p>&copy; 2024 Sir Issac Newton COllege of Engineering and Technology. All rights reserved.</p>
