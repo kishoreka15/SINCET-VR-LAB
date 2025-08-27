@@ -1,4 +1,4 @@
-const CACHE_NAME = 'app-cache-v1'; // increment this string when you want force-clear caches
+const CACHE_NAME = 'app-cache-v2';
 const ASSETS = [
   '/',
   '/index.html',
@@ -31,19 +31,9 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // network-first strategy
-  event.respondWith((async () => {
-    try {
-      const networkResponse = await fetch(event.request);
-      // update cache (optional)
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(event.request, networkResponse.clone().catch(()=>{}));
-      return networkResponse;
-    } catch (err) {
-      const cached = await caches.match(event.request);
-      return cached || caches.match('/index.html');
-    }
-  })());
+  event.respondWith(
+    fetch(event.request).catch(() => caches.match(event.request))
+  );
 });
 
 // listen for messages from the page
