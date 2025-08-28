@@ -32,7 +32,7 @@
   <div class="max-w-5xl mx-auto space-y-10">
 
     <!-- Title -->
-    <h1 class="text-4xl font-extrabold text-center">📐 Engineering Graphics Resources</h1>
+    <h1 class="text-4xl font-extrabold text-center">📐 3D printing Resources</h1>
 
     <!-- PDF Section -->
     <div class="grid md:grid-cols-2 gap-6">
@@ -40,7 +40,7 @@
         <h2 class="text-2xl font-semibold mb-3">📘 Manual PDF</h2>
         <a href="https://drive.google.com/file/d/1zInymNNwHIqesasRP0Uw-F8YVAlnwdL6/view?usp=share_link"
            class="block px-4 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-center font-bold hover:from-cyan-500 hover:to-blue-500 transition">
-          Download Engineering Graphics Manual
+          Download 3D printing Manual
         </a>
       </div>
       <div class="card bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow">
