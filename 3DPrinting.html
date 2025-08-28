@@ -3,119 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering Graphics Resources</title>
+  <title>Chemistry Lab</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Animated background */
+    /* Smooth gradient background */
     body {
-      background: linear-gradient(-45deg, #1e40af, #2563eb, #9333ea, #ec4899);
-      background-size: 400% 400%;
-      animation: gradientMove 15s ease infinite;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+      background-size: 200% 200%;
+      animation: gradientBG 12s ease infinite;
     }
-    @keyframes gradientMove {
+    @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    /* Card hover effect */
+
+    /* Card styling */
     .card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
-<body class="min-h-screen text-white p-6">
+<body class="min-h-screen text-white flex flex-col">
 
-  <div class="max-w-5xl mx-auto space-y-10">
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">⚗️ Chemistry Lab</h1>
+      <div class="space-x-6 text-sm font-medium">
+        <a href="#manual" class="hover:text-cyan-300">Lab Manual</a>
+        <a href="#viva" class="hover:text-cyan-300">Viva Voce</a>
+        <a href="#videos" class="hover:text-cyan-300">Videos</a>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Title -->
-    <h1 class="text-4xl font-extrabold text-center">📐 3D printing Resources</h1>
+  <!-- Page Content -->
+  <main class="flex-1 mt-24 max-w-6xl mx-auto space-y-10 p-6">
 
-    <!-- PDF Section -->
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="card bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow">
-        <h2 class="text-2xl font-semibold mb-3">📘 Manual PDF</h2>
-        <a href="https://drive.google.com/file/d/1zInymNNwHIqesasRP0Uw-F8YVAlnwdL6/view?usp=share_link"
-           class="block px-4 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-center font-bold hover:from-cyan-500 hover:to-blue-500 transition">
-          Download 3D printing Manual
+    <!-- Lab Manual -->
+    <section id="manual" class="card">
+      <h2 class="text-2xl font-semibold mb-3">📘 Lab Manual</h2>
+      <a href="https://drive.google.com/file/d/1o17RaQKynjKxtBavlzi1hPDxNCvbbXW3/view?usp=share_link"
+         class="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-400 hover:to-blue-600 font-semibold">
+        Download 3D Printing (PDF)
+      </a>
+    </section>
+
+    <!-- Viva Voce -->
+    <section id="viva" class="card">
+      <h2 class="text-2xl font-semibold mb-3">🎤 Viva Voce</h2>
+      <a href="https://drive.google.com/file/d/1D_4kAozqlOWkY3YyW1hBeeMrrlag31Pu/view?usp=share_link"
+         class="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-400 hover:to-purple-600 font-semibold">
+        Download Viva Voce Questions (PDF)
+      </a>
+    </section>
+
+    <!-- Videos -->
+    <section id="videos" class="card">
+      <h2 class="text-2xl font-semibold mb-6 text-center">🎥 Chemistry Laboratory Videos</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <a href="https://youtu.be/705L35B9YWc?si=zVNY6uLL8c7xlKP0" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Experiment 1 – To Study of 3D Printing
         </a>
-      </div>
-      <div class="card bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow">
-        <h2 class="text-2xl font-semibold mb-3">🎤 Viva Voce PDF</h2>
-        <a href="https://drive.google.com/file/d/1ptclXRQt0iHqRdEkCyBCz1WHyuis-dY1/view?usp=share_link"
-           class="block px-4 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-center font-bold hover:from-pink-500 hover:to-purple-500 transition">
-          Download Engineering Graphics Viva
+
+        <a href="https://youtu.be/yK__DhapraA?si=2NbU3FDcYFf-utKP" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Experiment 2 – How to create a box with a lid in Tinkercad
         </a>
+
+        <a href="https://youtu.be/S9ZPcZ8osMY?si=0HtcfbTnViwwpW4O" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Experiment 3 – To Design a Basic Hex Nut
+        </a>
+
+        <a href="https://youtu.be/LIOd6rjaDJk" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Experiment 4 – To Design a U Bracket Sheet Metal
+        </a>
+
+        <a href="https://youtu.be/WiR5XQ5e0Ck?si=Yj6IkOWbWk1NTVKy" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Experiment 5 – To Design A Project Name Text
+        </a>
+
+        <a href="https://youtu.be/2vFdwz4U1VQ?si=GnGxQssPHZe2OYtD" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Experiment 6 – How to Print the design in 3D printer
+        </a>
+
       </div>
-    </div>
+    </section>
 
-    <!-- Videos Section -->
-    <div class="bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow card">
-      <h2 class="text-3xl font-bold text-center mb-6">🎥 Engineering Graphics Videos</h2>
+  </main>
 
-      <!-- UNIT 1 -->
-      <h3 class="text-xl font-semibold mb-3">UNIT 1 – Curves</h3>
-      <div class="grid md:grid-cols-2 gap-3">
-        <a href="https://youtu.be/lmXrjQv9mAA" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Ellipse (Eccentricity)</a>
-        <a href="https://youtu.be/kAsKCPDYBvQ" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Parabola (Eccentricity)</a>
-        <a href="https://youtu.be/z2SQ7Hqhpkg" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Hyperbola (Eccentricity)</a>
-        <a href="https://youtu.be/QrIqQm5xbRc" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Cycloid</a>
-        <a href="https://youtu.be/e6Ysh2_EVIU" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Epicycloid</a>
-        <a href="https://youtu.be/fUidrlBz4dc" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Hypocycloid</a>
-        <a href="https://youtu.be/mRAF-kY4MEc" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Involute of Square</a>
-        <a href="https://youtu.be/VItWgxWrgio" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Involute of Triangle</a>
-        <a href="https://youtu.be/JBNdWeG0k30" class="px-3 py-2 rounded bg-green-600 hover:bg-green-700">Involute of Pentagon</a>
-      </div>
-
-      <!-- UNIT 2 -->
-      <h3 class="text-xl font-semibold mt-6 mb-3">UNIT 2 – Projection of Points, Lines & Planes</h3>
-      <div class="grid md:grid-cols-2 gap-3">
-        <a href="https://youtu.be/sjyox7QRGqU" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Projection of Points</a>
-        <a href="https://youtu.be/tdeqGsznC5s" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Lines Type 1</a>
-        <a href="https://youtu.be/P3crDwmw-kk" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Lines Type 2</a>
-        <a href="https://youtu.be/twpgtNr_9KY" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Lines Type 3</a>
-        <a href="https://youtu.be/dTFq_qp26_s" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Projection of Planes</a>
-        <a href="https://youtu.be/YiP_xR9KciM" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Pentagonal Lamina</a>
-        <a href="https://youtu.be/nhd7FksV7tA" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Triangular Lamina</a>
-        <a href="https://youtu.be/PQkaOYnMSY4" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Circular Lamina</a>
-        <a href="https://youtu.be/lG3yJVUamos" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Hexagonal Lamina</a>
-        <a href="https://youtu.be/zb_T0qYR4sg" class="px-3 py-2 rounded bg-blue-600 hover:bg-blue-700">Rectangular Lamina</a>
-      </div>
-
-      <!-- UNIT 3 -->
-      <h3 class="text-xl font-semibold mt-6 mb-3">UNIT 3 – Solids</h3>
-      <div class="grid md:grid-cols-2 gap-3">
-        <a href="https://youtu.be/7gd8EswCmec" class="px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Pentagonal Pyramid</a>
-        <a href="https://youtu.be/HT6HW_zbbPc" class="px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Hexagonal Pyramid</a>
-        <a href="https://youtu.be/Z1hZ30rSUdg" class="px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Cone</a>
-        <a href="https://youtu.be/z5YweVm1deM" class="px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Cylinder</a>
-        <a href="https://youtu.be/u6IuEkuuDtg" class="px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Hexagonal Prism</a>
-        <a href="https://youtu.be/4usSFjC2J-Y" class="px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Pentagonal Prism</a>
-        <a href="https://youtu.be/cU-PlXO1eGA" class="px-3 py-2 rounded bg-purple-600 hover:bg-purple-700">Cube</a>
-      </div>
-
-      <!-- UNIT 4 -->
-      <h3 class="text-xl font-semibold mt-6 mb-3">UNIT 4 – Development of Surfaces</h3>
-      <div class="grid md:grid-cols-2 gap-3">
-        <a href="https://youtu.be/fj-jUzSE-5s" class="px-3 py-2 rounded bg-pink-600 hover:bg-pink-700">Development of Cylinder</a>
-        <a href="https://youtu.be/_varnAaDsBU" class="px-3 py-2 rounded bg-pink-600 hover:bg-pink-700">Development of Truncated Cone</a>
-      </div>
-
-      <!-- UNIT 5 -->
-      <h3 class="text-xl font-semibold mt-6 mb-3">UNIT 5 – Isometric & Perspective</h3>
-      <div class="grid md:grid-cols-2 gap-3">
-        <a href="https://youtu.be/22wrlokwVyY" class="px-3 py-2 rounded bg-yellow-600 hover:bg-yellow-700">Perspective of Cube</a>
-        <a href="https://youtu.be/PiAKLuhf-88" class="px-3 py-2 rounded bg-yellow-600 hover:bg-yellow-700">Perspective of Cylinder</a>
-        <a href="https://youtu.be/pVWstFcSQVQ" class="px-3 py-2 rounded bg-yellow-600 hover:bg-yellow-700">Perspective of Prism</a>
-        <a href="https://youtu.be/NtT4IFBzgc0" class="px-3 py-2 rounded bg-yellow-600 hover:bg-yellow-700">Perspective of Rectangular Prism</a>
-        <a href="https://youtu.be/SWumP8rJwec" class="px-3 py-2 rounded bg-yellow-600 hover:bg-yellow-700">Free Hand Sketching</a>
-      </div>
-    </div>
-
-  </div>
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-300">
+    © 2025 Engineering Chemistry Lab | Designed for Students
+  </footer>
 
 </body>
 </html>
