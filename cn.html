@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Network Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth gradient background */
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+      background-size: 200% 200%;
+      animation: gradientBG 12s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Card styling */
+    .card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-white flex flex-col">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">⚗️ Computer Network Lab</h1>
+      <div class="space-x-6 text-sm font-medium">
+        <a href="#manual" class="hover:text-cyan-300">Lab Manual</a>
+        <a href="#viva" class="hover:text-cyan-300">Viva Voce</a>
+        <a href="#videos" class="hover:text-cyan-300">Videos</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <main class="flex-1 mt-24 max-w-6xl mx-auto space-y-10 p-6">
+
+    <!-- Lab Manual -->
+    <section id="manual" class="card">
+      <h2 class="text-2xl font-semibold mb-3">📘 Lab Manual</h2>
+      <a href="https://drive.google.com/file/d/1o17RaQKynjKxtBavlzi1hPDxNCvbbXW3/view?usp=share_link"
+         class="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-400 hover:to-blue-600 font-semibold">
+        Download Computer Network (PDF)
+      </a>
+    </section>
+
+    <!-- Viva Voce -->
+    <section id="viva" class="card">
+      <h2 class="text-2xl font-semibold mb-3">🎤 Viva Voce</h2>
+      <a href="https://drive.google.com/file/d/1D_4kAozqlOWkY3YyW1hBeeMrrlag31Pu/view?usp=share_link"
+         class="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-400 hover:to-purple-600 font-semibold">
+        Download Viva Voce Questions (PDF)
+      </a>
+    </section>
+
+    <!-- Videos -->
+    <section id="videos" class="card">
+      <h2 class="text-2xl font-semibold mb-6 text-center">🎥 Computer Network Laboratory Videos</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <a href="https://youtu.be/XbAPyXRxFtU?si=6TBYSNSKt1uAxHoW" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+        Learn to use commands like tcpdump, netstat, ifconfig, nslookup and trace route. Capture ping and trace route PDUs using a network protocol analyzer and examine
+        </a>
+
+        <a href="https://youtu.be/ND8u3cqV4D0?si=G-UEWn6dILlZ5Wp8" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Write a HTTP web client program to download a web page using TCP sockets
+        </a>
+
+        <a href="https://youtu.be/wR2pGlIWOGA?si=k6xlVmr_-iQvSj8-" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          APPLICATION USING TCP SOCKETS - ECHO CLIENT AND ECHO SERVER
+        </a>
+
+        <a href="https://youtu.be/LHeK-e7poOQ?si=xx3jjq_TbRlVVwbF" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          APPLICATION USING TCP SOCKETS – CHAT
+        </a>
+
+        <a href="https://youtu.be/XYSemZircW0?si=W6_dvd2GUwSGKRGa" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SIMULATION OF DNS USING UDP SOCKETS
+        </a>
+
+        <a href="https://youtu.be/ktFwX9S932w?si=fsyzyVryoBxGxkuN" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          USE A TOOL LIKE WIRESHARK TO CAPTURE PACKETS AND EXAMINE THE PACKETS
+        </a>
+
+        <a href="https://youtu.be/J_XD1lkxM2I?si=WDwRIHdbW-UvfRQa" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SIMULATION OF ARP PROTOCOLS
+        </a>
+        <a href="https://youtu.be/93QEVGP28Vo?si=3RZ6cAVJ0RkGp7PE" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+         SIMULATION OF RARP PROTOCOLS 
+        </a>
+
+        <a href="https://youtu.be/0hKMd90PYEI?si=Bwa2rh2aEpDIhf9d" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          STUDY OF NETWORK SIMULATOR (NS)
+        </a>
+
+        <a href="https://youtu.be/J_XD1lkxM2I?si=WDwRIHdbW-UvfRQa" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SIMULATION OF CONGESTION CONTROL ALGORITHMS USING NS
+        </a>
+        <a href="https://youtu.be/DKURbIqHrMc?si=WtuHRvBe64GPLHjn" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+         STUDY OF TCP/UDP PERFORMANCE USING SIMULATION TOOL
+        </a>
+
+        <a href="https://youtu.be/S7eU5fogWKk?si=3hzcDYwKRIUpyY_W" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SIMULATION OF DISTANCE VECTOR ROUTING ALGORITHM
+        </a>
+
+        <a href="https://youtu.be/XuisHV3RDKI?si=tunA8H1Hx-6L8tsu" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SIMULATION OF LINK STATE ROUTING ALGORITHM
+        </a>
+        <a href="https://youtu.be/3sIgsvI-58k?si=uN_Dj4VILqG-oT9u" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+         SIMULATION OF ERROR CORRECTION CODE (LIKE CRC)
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-300">
+    © 2025 Engineering Computer Network Lab | Designed for Students
+  </footer>
+
+</body>
+</html>
