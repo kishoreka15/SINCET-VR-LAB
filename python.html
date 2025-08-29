@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>python  Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth gradient background */
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+      background-size: 200% 200%;
+      animation: gradientBG 12s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Card styling */
+    .card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-white flex flex-col">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">⚗️ python  Lab</h1>
+      <div class="space-x-6 text-sm font-medium">
+        <a href="#manual" class="hover:text-cyan-300">Lab Manual</a>
+        <a href="#viva" class="hover:text-cyan-300">Viva Voce</a>
+        <a href="#videos" class="hover:text-cyan-300">Videos</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <main class="flex-1 mt-24 max-w-6xl mx-auto space-y-10 p-6">
+
+    <!-- Lab Manual -->
+    <section id="manual" class="card">
+      <h2 class="text-2xl font-semibold mb-3">📘 Lab Manual</h2>
+      <a href="https://drive.google.com/file/d/1zInymNNwHIqesasRP0Uw-F8YVAlnwdL6/view?usp=share_link"
+         class="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-cyan-400 hover:to-blue-600 font-semibold">
+        Download python  (PDF)
+      </a>
+    </section>
+
+    <!-- Viva Voce -->
+    <section id="viva" class="card">
+      <h2 class="text-2xl font-semibold mb-3">🎤 Viva Voce</h2>
+      <a href="https://drive.google.com/file/d/1mhDj72dCCqDR3KhRzHMfaiV-sCOtkUeC/view?usp=share_link"
+         class="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-400 hover:to-purple-600 font-semibold">
+        Download Viva Voce Questions (PDF)
+      </a>
+    </section>
+
+    <!-- Videos -->
+    <section id="videos" class="card">
+      <h2 class="text-2xl font-semibold mb-6 text-center">🎥 python  Laboratory Videos</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <a href="https://youtu.be/s7jU3Cr3m7I?si=-P7zQZFtx-iBDKao" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          ELECTRICITY BILL CALCULATION 
+        </a>
+
+        <a href="https://youtu.be/aX4yeHMg_RM?si=9K5IMQurDCZE0OgU" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          RETAIL SHOP BILLING
+        </a>
+
+        <a href="https://youtu.be/pD2yALl8QMY?si=ziyMb1vHNQonhhtj" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SINE SERIES
+        </a>
+
+        <a href="https://youtu.be/zzQB64q02Ds?si=4uXOsqFvN6dA2SXJ" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          COMPUTE ELECTRICAL CURRENT IN A THREE PHASE CIRCUIT
+        </a>
+
+        <a href="https://youtu.be/3dpJrMtxYeo?si=H73ZqdsJ9O3SB8d2" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          EXCHANGE THE VALUES OF TWO VARIABLES
+        </a>
+
+        <a href="https://youtu.be/qeZ5kiKJe7c?si=3P2hz6tSuipfrFuG" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          DISTANCE BETWEEN TWO POINTS
+        </a>
+
+        <a href="https://youtu.be/1Y46EaJAQ4c?si=Crx35tfV2ivrIARZ" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          CIRCULATE THE VALUE OF N VARIABLES
+        </a>
+
+        <a href="https://youtu.be/uT7Grf7KbRc?si=7pRPs5MBxcf0H-BL" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          NUMBER SERIES
+        </a>
+
+        <a href="https://youtu.be/npopDLgUXzU?si=LGMNW5DAaa3M4jcN" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          NUMBER PATTERNS
+        </a>
+
+        <a href="https://youtube.com/playlist?list=PLzgPDYo_3xuliFyI5dZKgYB99SMUscGyp&si=ftgPcDok01Pth8wp" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          PYRAMID PATTERNS
+        </a>
+
+        <a href="https://youtu.be/1tnFQDo05hQ?si=ihRq6R9nHWb38AkX" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          OPERATIONS OF LIST
+        </a>
+
+        <a href="https://youtu.be/zLFituJxj6c?si=7N7p64zvtPwirIk_" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          OPERATIONS OF TUPLES
+        </a>
+
+        <a href="https://youtu.be/2rdGqp-tHY8?si=kXYQCDErzGg6b0bO" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING REAL-TIME/TECHNICAL APPLICATIONS USING sets
+        </a>
+
+        <a href="https://youtu.be/wEGto-mU_UI?si=Uo7TnlLk2mnAsWWw" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING REAL-TIME/TECHNICAL APPLICATIONS USING DICTIONARY
+        </a>
+
+        <a href="https://youtu.be/pvu4KRMDO9g?si=9OYdm1vmCHf54uFt" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING PROGRAM USING FUNCTION(FACTORIAL)
+        </a>
+
+        <a href="https://youtu.be/0AZzpJjNjSI?si=cdnggT1LMD5ZUSQB" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING PROGRAM USING FUNCTION(LARGEST NUMBER IN A LIST)
+        </a>
+
+        <a href="https://youtu.be/RjJJGji2Uk8?si=HiwZ7mEY38bJK_O0" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING PROGRAM USING FUNCTION(AREA OF SHAPE)
+        </a>
+
+        <a href="https://youtu.be/rpmWMar4ogc?si=25OSbpoZbnoadtxe" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING PROGRAM USING STRINGS(REVERSE)
+        </a>
+
+         <a href="https://youtu.be/oLl1D6jlklQ?si=nGB65JV9_dpYrrcV" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING PROGRAM USING STRINGS(PALINDROME)
+        </a>
+
+        <a href="https://youtu.be/2lxlECVutiY?si=NJPAB7r6wBrsbejY" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING PROGRAM USING STRINGS(COUNT)
+        </a>
+
+        <a href="https://youtu.be/yE1SonJ-bTM?si=ZXTW4HecEoEKabS8" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          IMPLEMENTING PROGRAM USING STRINGS(REPLACE)
+        </a>
+
+        <a href="https://youtu.be/mkYBJwX_dMs?si=AbGpuZBfjJ-tw5sU" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          PANDAS LIBRARY
+        </a>
+
+        <a href="https://youtu.be/xECXZ3tyONo?si=aMxNFGSkT2fSpMq8" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          Numpy Library
+        </a>
+
+        <a href="https://youtu.be/qErBw-R2Ybk?si=6urfs1oeobhV_3ZC" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          MATPLOTLIB LIBRARY
+        </a>
+
+        <a href="https://www.youtube.com/live/k8s-R3csOt0?si=-IpI1K8SZ0QrXm8N" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SCIPY LIBRARY
+        </a>
+
+
+
+
+        <a href="https://youtu.be/OPw-36-Qdk8?si=IlRc9ZujHTR0HSLA" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          COPY FILE ONE FILE TO ANOTHER FILE
+        </a>
+
+        <a href="https://youtu.be/k0fyukMAdbE?si=nzz7LNNPTz-pTHTu" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          COUNTING NUMBER OF WORDS IN A FILE
+        </a>
+
+        <a href="https://youtu.be/nhUadYp-pOg?si=NA3rPJ5g9-3pjk3h" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          LONGEST WORD IN A FILE
+        </a>
+
+         <a href="https://youtu.be/n83xU6C6y00?si=rZj_hTNr3FY8yrA-" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          HANDLING DIVIDE BY ZERO EXCEPTION
+        </a>
+
+        <a href="https://youtu.be/oq9P66SBwWM?si=neI0egYJuxe1M27x" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          CHECK VOTER’S AGE ELIGIBILITY USING EXCEPTION HANDLING
+        </a>
+
+        <a href="https://youtu.be/v9PqVIgKxfo?si=_N7gGCZ3KXiTv2c-" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          EXPLORING PYGAME TOOL
+        </a>
+
+        <a href="https://youtu.be/jI0uudhexLY?si=bzVCPqcxuDSBOF80" class="p-4 rounded-lg bg-blue-600/40 hover:bg-blue-600/60">
+          SIMULATE BOUNCING BALL USING PYGAME
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-300">
+    © 2025 Engineering python  Lab | Designed for Students
+  </footer>
+
+</body>
+</html>
