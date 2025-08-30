@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Content Reader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+        #file-input {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        #content-display {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>code for </h1>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const contentDisplay = document.getElementById('content-display');
+
+        const readFileFromUrl = (filePath) => {
+            const contentDisplay = document.getElementById('content-display');
+            contentDisplay.innerHTML = ''; // Clear the initial message
+
+            const iframe = document.createElement('iframe');
+            iframe.src = filePath;
+            iframe.style.width = '100%';
+            iframe.style.height = 'calc(100vh - 220px)'; // Adjust height to fill most of the viewport
+            iframe.style.border = '1px solid #ddd';
+            iframe.style.borderRadius = '10px';
+
+            contentDisplay.appendChild(iframe);
+        };
+
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fileToRead = urlParams.get('file');
+            if (fileToRead) {
+                let filePath = fileToRead;
+                if (filePath.startsWith('python_code/')) {
+                    filePath = 'S_H/' + filePath;
+                }
+                readFileFromUrl(filePath);
+            }
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    // For local file selection, we can still display text content directly
+                    const pre = document.createElement('pre');
+                    pre.textContent = e.target.result;
+                    contentDisplay.innerHTML = '';
+                    contentDisplay.appendChild(pre);
+                };
+
+                reader.onerror = (e) => {
+                    contentDisplay.textContent = 'Error reading file: ' + e.target.error.name;
+                };
+
+                reader.readAsText(file);
+            } else {
+                contentDisplay.textContent = 'No file selected.';
+            }
+        });
+    </script>
+
+</body>
+</html>

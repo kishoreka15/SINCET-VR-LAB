@@ -19,14 +19,6 @@
             color: #444;
             margin-top: 30px;
         }
-        li {
-            background: #fff;
-            padding: 12px 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-            list-style-type: decimal; /* show 1,2,3... */
-        }
         a {
             text-decoration: none;
             color: #0066cc;
@@ -34,6 +26,43 @@
         }
         a:hover {
             color: darkred;
+        }
+        .video-list {
+            display: grid;
+            gap: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        /* Desktop: 3 items per row */
+        @media (min-width: 992px) {
+            .video-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Tablet: 2 items per row */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .video-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile: 1 item per row */
+        @media (max-width: 767px) {
+            .video-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-list li {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Controls space between title and link */
         }
     </style>
 </head>
@@ -54,51 +83,43 @@
     </p>
 
     <h2>🎥 Experiment Videos</h2>
-    <ol>
+    <ul class="video-list">
         <li>
-            <strong>Torsional Pendulum</strong><br>
+            <strong>Torsional Pendulum</strong>
             <a href="https://youtu.be/FRK88vmYzjU?si=Qsg7vad9RGpTb8ly" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Moment of Inertia of an Irregular Object</strong><br>
+            <strong>Moment of Inertia of an Irregular Object</strong>
             <a href="https://youtu.be/41A2XmkGk9Q?si=yzUnj5xMZBt5Vj0M" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Simple Harmonic Oscillations of Cantilever</strong><br>
+            <strong>Simple Harmonic Oscillations of Cantilever</strong>
             <a href="https://youtu.be/PDQyFeiHoRM?si=OgIvZeyUbsJlinbn" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Non-uniform Bending – Determination of Young's Modulus</strong><br>
+            <strong>Non-uniform Bending – Determination of Young's Modulus</strong>
             <a href="https://youtu.be/UPv09L8trz0?si=iW3mUMuoMbppHxjj" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Uniform Bending – Determination of Young's Modulus</strong><br>
+            <strong>Uniform Bending – Determination of Young's Modulus</strong>
             <a href="https://youtu.be/g9R2yr9xuUE?si=HR_YP7FQyxnND68s" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Laser – Wavelength Determination using Grating</strong><br>
+            <strong>Laser – Wavelength Determination using Grating</strong>
             <a href="https://youtu.be/dOTgadi7Hd0?si=x-JaVFve9zruav0c" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Air Wedge – Thickness of Thin Sheet/Wire</strong><br>
+            <strong>Air Wedge – Thickness of Thin Sheet/Wire</strong>
             <a href="https://youtu.be/t5579n7pg2Y?si=Zz9_WXW3kqw4d8Od" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Compact Disc – Groove Width Determination using Laser</strong><br>
+            <strong>Compact Disc – Groove Width Determination using Laser</strong>
             <a href="https://youtu.be/pDnMT6Un2gI?si=V0dCwenFqcn_qyFc" target="_blank">Watch Video</a>
         </li>
-
         <li>
-            <strong>Numerical Aperture & Acceptance Angle in Optical Fiber</strong><br>
+            <strong>Numerical Aperture & Acceptance Angle in Optical Fiber</strong>
             <a href="https://youtu.be/ih6ErM2KiGE?si=nukQMrB8OzgyCDOa" target="_blank">Watch Video</a>
         </li>
-    </ol>
+    </ul>
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Lab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+        h2 {
+            color: #444;
+            margin-top: 30px;
+        }
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        a:hover {
+            color: darkred;
+        }
+        .video-list {
+            display: grid;
+            gap: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        /* Desktop: 3 items per row */
+        @media (min-width: 992px) {
+            .video-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Tablet: 2 items per row */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .video-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile: 1 item per row */
+        @media (max-width: 767px) {
+            .video-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-list li {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Controls space between title and link */
+        }
+    </style>
+</head>
+<body>
+    <h1>⚗️ Chemistry Lab</h1>
+
+    <h2>📘 Lab Manual</h2>
+    <p>
+        <a href="https://drive.google.com/file/d/1o17RaQKynjKxtBavlzi1hPDxNCvbbXW3/view?usp=share_link" target="_blank">
+            📄 Download CY 3151 Engineering Chemistry (PDF)
+        </a>
+    </p>
+    <h2>🎤 Viva Voce</h2>
+    <p>
+        <a href="https://drive.google.com/file/d/1D_4kAozqlOWkY3YyW1hBeeMrrlag31Pu/view?usp=share_link" target="_blank">
+            📄 Download Viva Voce Questions (PDF)
+        </a>
+    </p>
+
+    <h2>🎥 Chemistry Laboratory Videos</h2>
+    <ul class="video-list">
+        <li>
+            <strong>Experiment 1 – Preparation of Na₂CO₃ & Acidity Estimation</strong>
+            <a href="https://youtu.be/ru3PA_7Bn2o" target="_blank">Watch Video</a>
+        </li>
+        <li>
+            <strong>Experiment 2 – Determination of Types & Amount of Alkalinity</strong>
+            <a href="https://youtu.be/BcPkpvp5oMg" target="_blank">Watch Video</a>
+        </li>
+        <li>
+            <strong>Experiment 3 – Determination of Hardness (EDTA Method)</strong>
+            <a href="https://youtu.be/43oflnUVKH0" target="_blank">Watch Video</a>
+        </li>
+        <li>
+            <strong>Experiment 4 – Determination of Dissolved Oxygen (Winkler Method)</strong>
+            <a href="https://youtu.be/LIOd6rjaDJk" target="_blank">Watch Video</a>
+        </li>
+        <li>
+            <strong>Experiment 5 – Determination of Chloride Content</strong>
+            <a href="https://youtu.be/7ANZLU9rsfM" target="_blank">Watch Video</a>
+        </li>
+        <li>
+            <strong>Experiment 6 – Estimation of Copper Content (Iodometry)</strong>
+            <a href="https://youtu.be/5MFN64Umzig" target="_blank">Watch Video</a>
+        </li>
+        <li>
+            <strong>Experiment 7 – Determination of Strength of Acids using Conductivity Meter</strong>
+            <a href="https://youtu.be/rBarYxXGec8" target="_blank">Watch Video</a>
+        </li>
+    </ul>
+</body>
+</html>
